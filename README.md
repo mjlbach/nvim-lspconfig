@@ -3190,7 +3190,7 @@ require'lspconfig'.omnisharp.setup{}
   Commands:
   
   Default Values:
-    cmd = { "/home/runner/.cache/nvim/lspconfig/omnisharp/run", "--languageserver", "--hostPID", "2524" }
+    cmd = { "/home/runner/.cache/nvim/lspconfig/omnisharp/run", "--languageserver", "--hostPID", "2519" }
     filetypes = { "cs", "vb" }
     init_options = {}
     on_new_config = <function 1>
@@ -4915,6 +4915,12 @@ This server accepts configuration via the `settings` key.
 - **`Lua.intelliSense.searchDepth`**: `integer`
 
   Default: `0`
+  
+  null
+
+- **`Lua.runtime.nonstandardSymbol`**: `array`
+
+  Array items: `{enum = { "//", "/**/", "`", "+=", "-=", "*=", "/=", "||", "&&", "!", "!=", "continue" },type = "string"}`
   
   null
 
