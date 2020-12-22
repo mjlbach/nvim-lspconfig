@@ -46,6 +46,7 @@ jobs:
     - name: Setup build dependencies
       run: |
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" &&
+        rm -rf /usr/local/2to3
         brew install ninja libtool automake pkg-config gettext
     - name: Run test with building Nvim
       run: |
