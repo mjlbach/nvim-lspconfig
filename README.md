@@ -1244,6 +1244,14 @@ This server accepts configuration via the `settings` key.
   
   null
 
+- **`dart.flutterAttachAdditionalArgs`**: `array`
+
+  Default: `{}`
+  
+  Array items: `{type = "string"}`
+  
+  null
+
 - **`dart.flutterCreateAndroidLanguage`**: `enum { "java", "kotlin" }`
 
   Default: `"kotlin"`
@@ -1303,6 +1311,14 @@ This server accepts configuration via the `settings` key.
   Default: `true`
   
   Whether to show the Flutter Outline tree in the sidebar\.
+
+- **`dart.flutterRunAdditionalArgs`**: `array`
+
+  Default: `{}`
+  
+  Array items: `{type = "string"}`
+  
+  null
 
 - **`dart.flutterRunLogFile`**: `null|string`
 
@@ -3190,7 +3206,7 @@ require'lspconfig'.omnisharp.setup{}
   Commands:
   
   Default Values:
-    cmd = { "/home/runner/.cache/nvim/lspconfig/omnisharp/run", "--languageserver", "--hostPID", "2551" }
+    cmd = { "/home/runner/.cache/nvim/lspconfig/omnisharp/run", "--languageserver", "--hostPID", "2588" }
     filetypes = { "cs", "vb" }
     init_options = {}
     on_new_config = <function 1>
@@ -4295,12 +4311,11 @@ This server accepts configuration via the `settings` key.
 
   Default: `vim.empty_dict()`
   
-  Optional settings passed to the debug engine\. Example\:
-  \{ \"lldb\"\: \{ \"terminal\"\:\"external\"\} \}
+  null
 
 - **`rust-analyzer.debug.openDebugPane`**: `boolean`
 
-  Whether to open up the Debug Pane on debugging start\.
+  null
 
 - **`rust-analyzer.debug.sourceFileMap`**: `object`
 
@@ -4396,7 +4411,7 @@ This server accepts configuration via the `settings` key.
 
   Default: `true`
   
-  Whether to show inlay hints
+  Whether to show inlay hints\.
 
 - **`rust-analyzer.inlayHints.maxLength`**: `null|integer`
 
@@ -4472,7 +4487,7 @@ This server accepts configuration via the `settings` key.
 
   Default: `vim.NIL`
   
-  Environment variables passed to the runnable launched using \`Test \` or \`Debug\` lens or \`rust\-analyzer\.run\` command\.
+  null
 
 - **`rust-analyzer.runnables.cargoExtraArgs`**: `array`
 
@@ -4514,23 +4529,23 @@ This server accepts configuration via the `settings` key.
 
   Default: `vim.NIL`
   
-  Path to rust\-analyzer executable \(points to bundled binary by default\)\. If this is set\, then \"rust\-analyzer\.updates\.channel\" setting is not used
+  null
 
 - **`rust-analyzer.trace.extension`**: `boolean`
 
-  Enable logging of VS Code extensions itself
+  Enable logging of VS Code extensions itself\.
 
 - **`rust-analyzer.trace.server`**: `enum { "off", "messages", "verbose" }`
 
   Default: `"off"`
   
-  Trace requests to the rust\-analyzer \(this is usually overly verbose and not recommended for regular users\)
+  Trace requests to the rust\-analyzer \(this is usually overly verbose and not recommended for regular users\)\.
 
 - **`rust-analyzer.updates.askBeforeDownload`**: `boolean`
 
   Default: `true`
   
-  Whether to ask for permission before downloading any files from the Internet
+  Whether to ask for permission before downloading any files from the Internet\.
 
 - **`rust-analyzer.updates.channel`**: `enum { "stable", "nightly" }`
 
@@ -4915,6 +4930,12 @@ This server accepts configuration via the `settings` key.
 - **`Lua.intelliSense.searchDepth`**: `integer`
 
   Default: `0`
+  
+  null
+
+- **`Lua.runtime.nonstandardSymbol`**: `array`
+
+  Array items: `{enum = { "//", "/**/", "`", "+=", "-=", "*=", "/=", "||", "&&", "!", "!=", "continue" },type = "string"}`
   
   null
 
