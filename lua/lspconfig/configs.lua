@@ -5,6 +5,13 @@ local tbl_extend = vim.tbl_extend
 
 local configs = {}
 
+local time_a = 0
+local total_time_a = 0
+local i_a = 0
+local time_b = 0
+local total_time_b = 0
+local i_b = 0
+
 function configs.__newindex(t, config_name, config_def)
   validate {
     name = {config_name, 's'};
@@ -183,7 +190,12 @@ function configs.__newindex(t, config_name, config_def)
     end)
 
     function manager.try_add()
+      
+      local start_time = vim.loop.hrtime()
       if vim.bo.buftype == 'nofile' then
+        total_time_a = total_time_a + time_a
+        print(i_a, time_a, total_time_a)
+        i_a = i_a +1
         return
       end
       local root_dir = get_root_dir(api.nvim_buf_get_name(0), api.nvim_get_current_buf())
@@ -191,6 +203,10 @@ function configs.__newindex(t, config_name, config_def)
       if id then
         lsp.buf_attach_client(0, id)
       end
+      time_a = (vim.loop.hrtime() - start_time) / 1E9
+      total_time_a = total_time_a + time_a
+      print(i_a, time_a, total_time_a)
+      i_a = i_a +1
     end
 
     M.manager = manager
@@ -198,6 +214,7 @@ function configs.__newindex(t, config_name, config_def)
   end
 
   function M._setup_buffer(client_id)
+    local start_time = vim.loop.hrtime()
     local client = lsp.get_client_by_id(client_id)
     if client.config._on_attach then
       client.config._on_attach(client)
@@ -210,6 +227,10 @@ function configs.__newindex(t, config_name, config_def)
       util.create_module_commands(config_name, M.commands)
       M.commands_created = true
     end
+    time_b = (vim.loop.hrtime() - start_time) / 1E9
+    total_time_b = total_time_b + time_b
+    print(i_b, time_b, total_time_b)
+    i_b = i_b + 1
   end
 
   M.commands_created = false
