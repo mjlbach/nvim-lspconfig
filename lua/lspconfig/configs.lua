@@ -190,7 +190,7 @@ function configs.__newindex(t, config_name, config_def)
     end)
 
     function manager.try_add()
-      
+      print("Invoking manager.try_add")
       local start_time = vim.loop.hrtime()
       if vim.bo.buftype == 'nofile' then
         total_time_a = total_time_a + time_a
@@ -214,6 +214,7 @@ function configs.__newindex(t, config_name, config_def)
   end
 
   function M._setup_buffer(client_id)
+    print("Invoking setup_buffer")
     local start_time = vim.loop.hrtime()
     local client = lsp.get_client_by_id(client_id)
     if client.config._on_attach then
@@ -229,8 +230,9 @@ function configs.__newindex(t, config_name, config_def)
     end
     time_b = (vim.loop.hrtime() - start_time) / 1E9
     total_time_b = total_time_b + time_b
-    print(i_b, time_b, total_time_b)
+    print("Invoked setup_buffer", i_b, time_b, total_time_b)
     i_b = i_b + 1
+    -- print("Last measurements for manager.try_add,", i_b, time_b, total_time_b)
   end
 
   M.commands_created = false
