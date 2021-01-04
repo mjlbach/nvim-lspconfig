@@ -40,11 +40,20 @@ function M._root._setup()
 end
 
 local mt = {}
+local i = 0
+local total_time = 0
 function mt:__index(k)
+  local start_time = vim.loop.hrtime()
   if configs[k] == nil then
     require('lspconfig/'..k)
   end
-  return configs[k]
+  out = configs[k]
+  time = (vim.loop.hrtime() - start_time) / 1E9
+  total_time = total_time + time
+  print(i, time, total_time, k) 
+  i = i + 1
+  return out
+  -- return { setup = function()  end}
 end
 
 return setmetatable(M, mt)
