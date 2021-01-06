@@ -4,7 +4,7 @@ local util = require 'lspconfig/util'
 local server_name = "intelephense"
 local bin_name = "intelephense"
 
-configs[server_name] = {
+return {
   default_config = {
     cmd = {bin_name, "--stdio"};
     filetypes = {"php"};

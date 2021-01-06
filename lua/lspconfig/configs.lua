@@ -35,7 +35,7 @@ function configs.__newindex(t, config_name, config_def)
   default_config.name = config_name
 
   function M.setup(config)
-    local start_time = vim.loop.hrtime()
+    -- local start_time = vim.loop.hrtime()
     -- validate {
     --   root_dir = {config.root_dir, 'f', default_config.root_dir ~= nil};
     --   filetypes = {config.filetype, 't', true};
@@ -145,10 +145,10 @@ function configs.__newindex(t, config_name, config_def)
 
     -- M.manager = manager
     M.make_config = make_config
-    time = (vim.loop.hrtime() - start_time) / 1E9
-    total_time = total_time + time
-    print(i, time, total_time, k) 
-    i = i + 1
+    -- time = (vim.loop.hrtime() - start_time) / 1E9
+    -- total_time = total_time + time
+    -- print(i, time, total_time, k) 
+    -- i = i + 1
   end
 
   -- function M._setup_buffer(client_id)

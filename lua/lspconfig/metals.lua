@@ -3,7 +3,7 @@ local util = require 'lspconfig/util'
 local server_name = "metals"
 local bin_name = "metals"
 
-configs[server_name] = {
+return {
   default_config = {
     cmd = {bin_name};
     filetypes = {"scala"};

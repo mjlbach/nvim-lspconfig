@@ -4,7 +4,7 @@ local util = require 'lspconfig/util'
 local server_name = "vuels"
 local bin_name = "vls"
 
-configs[server_name] = {
+return {
   default_config = {
     cmd = {bin_name};
     filetypes = {"vue"};

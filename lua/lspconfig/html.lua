@@ -6,7 +6,7 @@ local bin_name = "html-languageserver"
 
 local root_pattern = util.root_pattern("package.json")
 
-configs[server_name] = {
+return {
   default_config = {
     cmd = {bin_name, "--stdio"};
     filetypes = {"html"};

@@ -14,7 +14,7 @@ end
 
 local default_probe_dir = get_probe_dir(vim.fn.getcwd())
 
-configs[server_name] = {
+return {
   default_config = {
     cmd = {
       'angularls',

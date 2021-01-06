@@ -3,7 +3,7 @@ local util = require 'lspconfig/util'
 
 local server_name = "bashls"
 
-configs[server_name] = {
+return {
   default_config = {
     cmd = {"bash-language-server", "start"};
     filetypes = {"sh"};

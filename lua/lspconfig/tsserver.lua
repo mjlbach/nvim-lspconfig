@@ -7,7 +7,7 @@ if vim.fn.has('win32') == 1 then
   bin_name = bin_name..".cmd"
 end
 
-configs[server_name] = {
+return {
   default_config = {
     cmd = {bin_name, "--stdio"};
     filetypes = {"javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx"};

@@ -27,7 +27,7 @@ local analysis_server_snapshot_path = function()
   return snapshot
 end
 
-configs[server_name] = {
+return {
   default_config = {
     cmd = {bin_name, analysis_server_snapshot_path(), "--lsp"};
     filetypes = {"dart"};

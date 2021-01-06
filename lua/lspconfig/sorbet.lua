@@ -4,7 +4,7 @@ local util = require 'lspconfig/util'
 local server_name = "sorbet"
 local bin_name = "srb"
 
-configs[server_name] = {
+return {
   default_config = {
     cmd = {bin_name, "tc", "--lsp"};
     filetypes = {"ruby"};

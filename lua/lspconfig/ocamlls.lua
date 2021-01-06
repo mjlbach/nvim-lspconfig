@@ -4,7 +4,7 @@ local util = require 'lspconfig/util'
 local server_name = "ocamlls"
 local bin_name = "ocaml-language-server"
 
-configs[server_name] = {
+return {
   default_config = {
     cmd = { bin_name, "--stdio" };
     filetypes = { "ocaml", "reason" };

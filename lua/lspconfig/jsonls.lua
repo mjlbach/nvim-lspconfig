@@ -4,7 +4,7 @@ local util = require 'lspconfig/util'
 local server_name = "jsonls"
 local bin_name = "vscode-json-languageserver"
 
-configs[server_name] = {
+return {
   default_config = {
     cmd = {bin_name, "--stdio"};
     filetypes = {"json"};

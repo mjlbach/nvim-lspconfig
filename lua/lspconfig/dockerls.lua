@@ -4,7 +4,7 @@ local util = require 'lspconfig/util'
 local server_name = "dockerls"
 local bin_name = "docker-langserver"
 
-configs[server_name] = {
+return {
   default_config = {
     cmd = {bin_name, "--stdio"};
     filetypes = {"Dockerfile", "dockerfile"};

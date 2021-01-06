@@ -10,7 +10,7 @@ local default_capabilities = lsp.protocol.make_client_capabilities()
 default_capabilities.offsetEncoding = {"utf-8", "utf-16"}
 local elm_root_pattern = util.root_pattern("elm.json")
 
-configs[server_name] = {
+return {
   default_config = {
     cmd = {bin_name};
     -- TODO(ashkan) if we comment this out, it will allow elmls to operate on elm.json. It seems like it could do that, but no other editor allows it right now.

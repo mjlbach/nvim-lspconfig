@@ -4,7 +4,7 @@ local util = require 'lspconfig/util'
 local server_name = "yamlls"
 local bin_name = "yaml-language-server"
 
-configs[server_name] = {
+return {
   default_config = {
     cmd = {bin_name, "--stdio"};
     filetypes = {"yaml"};

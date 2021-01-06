@@ -3,7 +3,7 @@ local util = require 'lspconfig/util'
 
 local server_name = "denols"
 
-configs[server_name] = {
+return {
   default_config = {
     cmd = {"deno", "lsp"};
     filetypes = {"javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx"};

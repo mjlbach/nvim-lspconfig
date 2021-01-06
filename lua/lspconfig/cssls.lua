@@ -6,7 +6,7 @@ local bin_name = "css-languageserver"
 
 local root_pattern = util.root_pattern("package.json")
 
-configs[server_name] = {
+return {
   default_config = {
     cmd = {bin_name, "--stdio"};
     filetypes = {"css", "scss", "less"};

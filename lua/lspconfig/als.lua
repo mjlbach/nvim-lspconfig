@@ -7,7 +7,7 @@ if vim.fn.has('win32') == 1 then
   bin_name = 'ada_language_server.exe'
 end
 
-configs[server_name] = {
+return {
   default_config = {
     cmd = {bin_name};
     filetypes = {"ada"};

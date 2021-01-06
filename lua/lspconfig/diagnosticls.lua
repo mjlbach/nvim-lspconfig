@@ -4,7 +4,7 @@ local util = require 'lspconfig/util'
 local server_name = "diagnosticls"
 local bin_name = "diagnostic-languageserver"
 
-configs[server_name] = {
+return {
   default_config = {
     cmd = {bin_name, "--stdio"},
     filetypes = {},

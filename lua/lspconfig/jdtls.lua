@@ -5,7 +5,7 @@ local path = util.path
 
 local server_name = "jdtls"
 
-configs[server_name] = {
+return {
   default_config = {
     filetypes = { "java" };
     root_dir = util.root_pattern('.git');
