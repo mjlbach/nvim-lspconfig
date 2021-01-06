@@ -15,87 +15,87 @@ M.default_config = {
   handlers = {};
 }
 
-function M.validate_bufnr(bufnr)
-  validate {
-    bufnr = { bufnr, 'n' }
-  }
-  return bufnr == 0 and api.nvim_get_current_buf() or bufnr
-end
+-- function M.validate_bufnr(bufnr)
+--   validate {
+--     bufnr = { bufnr, 'n' }
+--   }
+--   return bufnr == 0 and api.nvim_get_current_buf() or bufnr
+-- end
 
-function M.add_hook_before(func, new_fn)
-  if func then
-    return function(...)
-      -- TODO which result?
-      new_fn(...)
-      return func(...)
-    end
-  else
-    return new_fn
-  end
-end
+-- function M.add_hook_before(func, new_fn)
+--   if func then
+--     return function(...)
+--       -- TODO which result?
+--       new_fn(...)
+--       return func(...)
+--     end
+--   else
+--     return new_fn
+--   end
+-- end
 
-function M.add_hook_after(func, new_fn)
-  if func then
-    return function(...)
-      -- TODO which result?
-      func(...)
-      return new_fn(...)
-    end
-  else
-    return new_fn
-  end
-end
+-- function M.add_hook_after(func, new_fn)
+--   if func then
+--     return function(...)
+--       -- TODO which result?
+--       func(...)
+--       return new_fn(...)
+--     end
+--   else
+--     return new_fn
+--   end
+-- end
 
-function M.tbl_deep_extend(behavior, ...)
-  if (behavior ~= 'error' and behavior ~= 'keep' and behavior ~= 'force') then
-    error('invalid "behavior": '..tostring(behavior))
-  end
+-- function M.tbl_deep_extend(behavior, ...)
+--   if (behavior ~= 'error' and behavior ~= 'keep' and behavior ~= 'force') then
+--     error('invalid "behavior": '..tostring(behavior))
+--   end
 
-  if select('#', ...) < 2 then
-    error('wrong number of arguments (given '..tostring(1 + select('#', ...))..', expected at least 3)')
-  end
+--   if select('#', ...) < 2 then
+--     error('wrong number of arguments (given '..tostring(1 + select('#', ...))..', expected at least 3)')
+--   end
 
-  local ret = {}
-  if vim._empty_dict_mt ~= nil and getmetatable(select(1, ...)) == vim._empty_dict_mt then
-    ret = vim.empty_dict()
-  end
+--   local ret = {}
+--   if vim._empty_dict_mt ~= nil and getmetatable(select(1, ...)) == vim._empty_dict_mt then
+--     ret = vim.empty_dict()
+--   end
 
-  for i = 1, select('#', ...) do
-    local tbl = select(i, ...)
-    vim.validate{["after the second argument"] = {tbl,'t'}}
-    if tbl then
-      for k, v in pairs(tbl) do
-        if type(v) == 'table' and not vim.tbl_islist(v) then
-          ret[k] = M.tbl_deep_extend(behavior, ret[k] or vim.empty_dict(), v)
-        elseif behavior ~= 'force' and ret[k] ~= nil then
-          if behavior == 'error' then
-            error('key found in more than one map: '..k)
-          end  -- Else behavior is "keep".
-        else
-          ret[k] = v
-        end
-      end
-    end
-  end
-  return ret
-end
+--   for i = 1, select('#', ...) do
+--     local tbl = select(i, ...)
+--     vim.validate{["after the second argument"] = {tbl,'t'}}
+--     if tbl then
+--       for k, v in pairs(tbl) do
+--         if type(v) == 'table' and not vim.tbl_islist(v) then
+--           ret[k] = M.tbl_deep_extend(behavior, ret[k] or vim.empty_dict(), v)
+--         elseif behavior ~= 'force' and ret[k] ~= nil then
+--           if behavior == 'error' then
+--             error('key found in more than one map: '..k)
+--           end  -- Else behavior is "keep".
+--         else
+--           ret[k] = v
+--         end
+--       end
+--     end
+--   end
+--   return ret
+-- end
 
-function M.nvim_multiline_command(command)
-  validate { command = { command, 's' } }
-  for line in vim.gsplit(command, "\n", true) do
-    api.nvim_command(line)
-  end
-end
+-- function M.nvim_multiline_command(command)
+--   validate { command = { command, 's' } }
+--   for line in vim.gsplit(command, "\n", true) do
+--     api.nvim_command(line)
+--   end
+-- end
 
-function M.lookup_section(settings, section)
-  for part in vim.gsplit(section, '.', true) do
-    settings = settings[part]
-    if not settings then
-      return
-    end
-  end
-  return settings
-end
+-- function M.lookup_section(settings, section)
+--   for part in vim.gsplit(section, '.', true) do
+--     settings = settings[part]
+--     if not settings then
+--       return
+--     end
+--   end
+--   return settings
+-- end
 
 function M.create_module_commands(module_name, commands)
   for command_name, def in pairs(commands) do
@@ -116,16 +116,16 @@ function M.create_module_commands(module_name, commands)
   end
 end
 
-function M.has_bins(...)
-  for i = 1, select("#", ...) do
-    if 0 == fn.executable((select(i, ...))) then
-      return false
-    end
-  end
-  return true
-end
+-- function M.has_bins(...)
+--   for i = 1, select("#", ...) do
+--     if 0 == fn.executable((select(i, ...))) then
+--       return false
+--     end
+--   end
+--   return true
+-- end
 
--- Some path utilities
+-- -- Some path utilities
 M.path = (function()
   local function exists(filename)
     local stat = uv.fs_stat(filename)
@@ -241,55 +241,55 @@ M.path = (function()
 end)()
 
 
--- Returns a function(root_dir), which, when called with a root_dir it hasn't
--- seen before, will call make_config(root_dir) and start a new client.
-function M.server_per_root_dir_manager(_make_config)
-  local clients = {}
-  local manager = {}
+-- -- Returns a function(root_dir), which, when called with a root_dir it hasn't
+-- -- seen before, will call make_config(root_dir) and start a new client.
+-- function M.server_per_root_dir_manager(_make_config)
+--   local clients = {}
+--   local manager = {}
 
-  function manager.add(root_dir)
-    if not root_dir then return end
-    if not M.path.is_dir(root_dir) then return end
+--   function manager.add(root_dir)
+--     if not root_dir then return end
+--     if not M.path.is_dir(root_dir) then return end
 
-    -- Check if we have a client alredy or start and store it.
-    local client_id = clients[root_dir]
-    if not client_id then
-      local new_config = _make_config(root_dir)
-      --TODO:mjlbach -- this current isn't printing
-      if not new_config.cmd then
-          print(string.format("Error, cmd not defined for [%q]. You must manually define a cmd for the default config for this server. See server documentation.", new_config.name))
-          return
-      end
-      new_config.on_exit = M.add_hook_before(new_config.on_exit, function()
-        clients[root_dir] = nil
-      end)
-      client_id = lsp.start_client(new_config)
-      clients[root_dir] = client_id
-    end
-    return client_id
-  end
+--     -- Check if we have a client alredy or start and store it.
+--     local client_id = clients[root_dir]
+--     if not client_id then
+--       local new_config = _make_config(root_dir)
+--       --TODO:mjlbach -- this current isn't printing
+--       if not new_config.cmd then
+--           print(string.format("Error, cmd not defined for [%q]. You must manually define a cmd for the default config for this server. See server documentation.", new_config.name))
+--           return
+--       end
+--       new_config.on_exit = M.add_hook_before(new_config.on_exit, function()
+--         clients[root_dir] = nil
+--       end)
+--       client_id = lsp.start_client(new_config)
+--       clients[root_dir] = client_id
+--     end
+--     return client_id
+--   end
 
-  function manager.clients()
-    local res = {}
-    for _, id in pairs(clients) do
-      local client = lsp.get_client_by_id(id)
-      if client then
-        table.insert(res, client)
-      end
-    end
-    return res
-  end
+--   function manager.clients()
+--     local res = {}
+--     for _, id in pairs(clients) do
+--       local client = lsp.get_client_by_id(id)
+--       if client then
+--         table.insert(res, client)
+--       end
+--     end
+--     return res
+--   end
 
-  return manager
-end
+--   return manager
+-- end
 
-function M.search_ancestors(startpath, func)
-  validate { func = {func, 'f'} }
-  if func(startpath) then return startpath end
-  for path in M.path.iterate_parents(startpath) do
-    if func(path) then return path end
-  end
-end
+-- function M.search_ancestors(startpath, func)
+--   validate { func = {func, 'f'} }
+--   if func(startpath) then return startpath end
+--   for path in M.path.iterate_parents(startpath) do
+--     if func(path) then return path end
+--   end
+-- end
 
 function M.root_pattern(...)
   local patterns = vim.tbl_flatten {...}
