@@ -90,8 +90,6 @@ require('lspconfig').als.setup{
 ```lua
 require'lspconfig'.als.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "ada_language_server" }
     filetypes = { "ada" }
@@ -123,8 +121,6 @@ require'lspconfig'.angularls.setup{
 ```lua
 require'lspconfig'.angularls.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "angularls", "--stdio", "--tsProbeLocations", "", "--ngProbeLocations", "" }
     filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx" }
@@ -141,8 +137,6 @@ Language server for bash, written using tree sitter in typescript.
 ```lua
 require'lspconfig'.bashls.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "bash-language-server", "start" }
     filetypes = { "sh" }
@@ -180,8 +174,6 @@ lspconfig.ccls.setup {
 ```lua
 require'lspconfig'.ccls.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "ccls" }
     filetypes = { "c", "cpp", "objc", "objcpp" }
@@ -223,8 +215,6 @@ Clojure Language Server
 ```lua
 require'lspconfig'.clojure_lsp.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "clojure-lsp" }
     filetypes = { "clojure", "edn" }
@@ -241,8 +231,6 @@ CMake LSP Implementation
 ```lua
 require'lspconfig'.cmake.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "cmake-language-server" }
     filetypes = { "cmake" }
@@ -324,8 +312,6 @@ This server accepts configuration via the `settings` key.
 ```lua
 require'lspconfig'.codeqlls.setup{}
 
-  Commands:
-  
   Default Values:
     before_init = <function 1>
     cmd = { "codeql", "execute", "language-server", "--check-errors", "ON_CHANGE", "-q" }
@@ -350,8 +336,6 @@ npm install -g vscode-css-languageserver-bin
 ```lua
 require'lspconfig'.cssls.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "css-languageserver", "--stdio" }
     filetypes = { "css", "scss", "less" }
@@ -952,8 +936,6 @@ This server accepts configuration via the `settings` key.
 ```lua
 require'lspconfig'.dartls.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "dart", "./snapshots/analysis_server.dart.snapshot", "--lsp" }
     filetypes = { "dart" }
@@ -978,8 +960,6 @@ Deno's built-in language server
 ```lua
 require'lspconfig'.denols.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "deno", "lsp" }
     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" }
@@ -997,8 +977,6 @@ require'lspconfig'.denols.setup{}
 ```lua
 require'lspconfig'.dhall_lsp_server.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "dhall-lsp-server" }
     docs = {
@@ -1021,8 +999,6 @@ Diagnostic language server integrate with linters.
 ```lua
 require'lspconfig'.diagnosticls.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "diagnostic-languageserver", "--stdio" }
     filetypes = Empty by default, override to add filetypes
@@ -1042,8 +1018,6 @@ npm install -g dockerfile-language-server-nodejs
 ```lua
 require'lspconfig'.dockerls.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "docker-langserver", "--stdio" }
     filetypes = { "Dockerfile", "dockerfile" }
@@ -1060,8 +1034,6 @@ General purpose Language Server that can use specified error message format gene
 ```lua
 require'lspconfig'.efm.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "efm-langserver" }
     root_dir = root_pattern(".git")
@@ -1142,8 +1114,6 @@ This server accepts configuration via the `settings` key.
 ```lua
 require'lspconfig'.elixirls.setup{}
 
-  Commands:
-  
   Default Values:
     filetypes = { "elixir", "eelixir" }
     root_dir = root_pattern("mix.exs", ".git") or vim.loop.os_homedir()
@@ -1194,8 +1164,6 @@ This server accepts configuration via the `settings` key.
 ```lua
 require'lspconfig'.elmls.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "elm-language-server" }
     filetypes = { "elm" }
@@ -1324,8 +1292,6 @@ This server accepts configuration via the `settings` key.
 ```lua
 require'lspconfig'.flow.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "npx", "--no-install", "flow", "lsp" }
     filetypes = { "javascript", "javascriptreact", "javascript.jsx" }
@@ -1416,8 +1382,6 @@ This server accepts configuration via the `settings` key.
 ```lua
 require'lspconfig'.fortls.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "fortls" }
     filetypes = { "fortran" }
@@ -1437,8 +1401,6 @@ Language server for GDScript, used by Godot Engine.
 ```lua
 require'lspconfig'.gdscript.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "nc", "localhost", "6008" }
     filetypes = { "gd", "gdscript", "gdscript3" }
@@ -1456,8 +1418,6 @@ A library for building Haskell IDE tooling.
 ```lua
 require'lspconfig'.ghcide.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "ghcide", "--lsp" }
     filetypes = { "haskell", "lhaskell" }
@@ -1474,8 +1434,6 @@ Google's lsp server for golang.
 ```lua
 require'lspconfig'.gopls.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "gopls" }
     filetypes = { "go", "gomod" }
@@ -1506,8 +1464,6 @@ require'lspconfig'.groovyls.setup{
 ```lua
 require'lspconfig'.groovyls.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "java", "-jar", "groovy-language-server-all.jar" }
     filetypes = { "groovy" }
@@ -1617,8 +1573,6 @@ This server accepts configuration via the `settings` key.
 ```lua
 require'lspconfig'.hie.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "hie-wrapper", "--lsp" }
     filetypes = { "haskell" }
@@ -1635,8 +1589,6 @@ Haskell Language Server
 ```lua
 require'lspconfig'.hls.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "haskell-language-server-wrapper", "--lsp" }
     filetypes = { "haskell", "lhaskell" }
@@ -1656,8 +1608,6 @@ npm install -g vscode-html-languageserver-bin
 ```lua
 require'lspconfig'.html.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "html-languageserver", "--stdio" }
     filetypes = { "html" }
@@ -1685,8 +1635,6 @@ npm install -g intelephense
 ```lua
 require'lspconfig'.intelephense.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "intelephense", "--stdio" }
     filetypes = { "php" }
@@ -1705,8 +1653,6 @@ See project page for installation instructions.
 ```lua
 require'lspconfig'.jdtls.setup{}
 
-  Commands:
-  
   Default Values:
     filetypes = { "java" }
     handlers = {
@@ -1729,8 +1675,6 @@ https://github.com/pappasam/jedi-language-server
 ```lua
 require'lspconfig'.jedi_language_server.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "jedi-language-server" }
     filetypes = { "python" }
@@ -1806,8 +1750,6 @@ This server accepts configuration via the `settings` key.
 ```lua
 require'lspconfig'.jsonls.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "vscode-json-languageserver", "--stdio" }
     filetypes = { "json" }
@@ -2055,8 +1997,6 @@ This server accepts configuration via the `settings` key.
 ```lua
 require'lspconfig'.julials.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "julia", "--project=julials", "--startup-file=no", "--history-file=no", "-e", '        using Pkg;\n        Pkg.instantiate()\n        using LanguageServer; using SymbolServer;\n        depot_path = get(ENV, "JULIA_DEPOT_PATH", "")\n        project_path = dirname(something(Base.current_project(pwd()), Base.load_path_expand(LOAD_PATH[2])))\n        # Make sure that we only load packages from this environment specifically.\n        empty!(LOAD_PATH)\n        push!(LOAD_PATH, "@")\n        @info "Running language server" env=Base.load_path()[1] pwd() project_path depot_path\n        server = LanguageServer.LanguageServerInstance(stdin, stdout, project_path, depot_path);\n        server.runlinter = true;\n        run(server);\n        ' }
     filetypes = { "julia" }
@@ -2179,8 +2119,6 @@ This server accepts configuration via the `settings` key.
 ```lua
 require'lspconfig'.kotlin_language_server.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "kotlin-language-server" }
     filetypes = { "kotlin" }
@@ -2317,8 +2255,6 @@ This server accepts configuration via the `settings` key.
 ```lua
 require'lspconfig'.leanls.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "lean-language-server", "--stdio" }
     filetypes = { "lean" }
@@ -2445,8 +2381,6 @@ This server accepts configuration via the `settings` key.
 ```lua
 require'lspconfig'.metals.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "metals" }
     filetypes = { "scala" }
@@ -2554,8 +2488,6 @@ This server accepts configuration via the `settings` key.
 ```lua
 require'lspconfig'.nimls.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "nimlsp" }
     filetypes = { "nim" }
@@ -2575,8 +2507,6 @@ npm install -g ocaml-langauge-server
 ```lua
 require'lspconfig'.ocamlls.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "ocaml-language-server", "--stdio" }
     filetypes = { "ocaml", "reason" }
@@ -2599,8 +2529,6 @@ opam install ocaml-lsp-server
 ```lua
 require'lspconfig'.ocamllsp.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "ocamllsp" }
     filetypes = { "ocaml", "reason" }
@@ -2632,8 +2560,6 @@ require'lspconfig'.omnisharp.setup{
 ```lua
 require'lspconfig'.omnisharp.setup{}
 
-  Commands:
-  
   Default Values:
     filetypes = { "cs", "vb" }
     init_options = {}
@@ -2744,8 +2670,6 @@ This server accepts configuration via the `settings` key.
 ```lua
 require'lspconfig'.perlls.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "perl", "-MPerl::LanguageServer", "-e", "Perl::LanguageServer::run", "--", "--port 13603", "--nostdio 0", "--version 2.1.0" }
     filetypes = { "perl" }
@@ -2912,8 +2836,6 @@ This server accepts configuration via the `settings` key.
 ```lua
 require'lspconfig'.purescriptls.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "purescript-language-server", "--stdio" }
     filetypes = { "purescript" }
@@ -3216,8 +3138,6 @@ This server accepts configuration via the `settings` key.
 ```lua
 require'lspconfig'.pyls.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "pyls" }
     filetypes = { "python" }
@@ -3258,8 +3178,6 @@ This server accepts configuration via the `settings` key.
 ```lua
 require'lspconfig'.pyls_ms.setup{}
 
-  Commands:
-  
   Default Values:
     filetypes = { "python" }
     init_options = {
@@ -3295,8 +3213,6 @@ https://github.com/microsoft/pyright
 ```lua
 require'lspconfig'.pyright.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "pyright-langserver", "--stdio" }
     filetypes = { "python" }
@@ -3381,8 +3297,6 @@ This server accepts configuration via the `settings` key.
 ```lua
 require'lspconfig'.r_language_server.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "R", "--slave", "-e", "languageserver::run()" }
     filetypes = { "r", "rmd" }
@@ -3632,8 +3546,6 @@ This server accepts configuration via the `settings` key.
 ```lua
 require'lspconfig'.rls.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "rls" }
     filetypes = { "rust" }
@@ -3655,8 +3567,6 @@ This server accepts configuration via the `settings` key.
 ```lua
 require'lspconfig'.rnix.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "rnix-lsp" }
     filetypes = { "nix" }
@@ -3679,8 +3589,6 @@ npm install [-g] rome
 ```lua
 require'lspconfig'.rome.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "rome", "lsp" }
     filetypes = { "javascript", "javascriptreact", "json", "typescript", "typescript.tsx", "typescriptreact" }
@@ -4105,8 +4013,6 @@ This server accepts configuration via the `settings` key.
 ```lua
 require'lspconfig'.rust_analyzer.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "rust-analyzer" }
     filetypes = { "rust" }
@@ -4126,8 +4032,6 @@ Crystal language server.
 ```lua
 require'lspconfig'.scry.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "scry" }
     filetypes = { "crystal" }
@@ -4248,8 +4152,6 @@ This server accepts configuration via the `settings` key.
 ```lua
 require'lspconfig'.solargraph.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "solargraph", "stdio" }
     filetypes = { "ruby" }
@@ -4273,8 +4175,6 @@ gem install sorbet
 ```lua
 require'lspconfig'.sorbet.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "srb", "tc", "--lsp" }
     filetypes = { "ruby" }
@@ -4321,8 +4221,6 @@ This server accepts configuration via the `settings` key.
 ```lua
 require'lspconfig'.sourcekit.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "xcrun", "sourcekit-lsp" }
     filetypes = { "swift", "c", "cpp", "objective-c", "objective-cpp" }
@@ -4349,8 +4247,6 @@ This LSP can be installed via  `npm`. Find further instructions on manual instal
 ```lua
 require'lspconfig'.sqlls.setup{}
 
-  Commands:
-  
   Default Values:
     filetypes = { "sql", "mysql" }
     root_dir = <function 1>
@@ -4629,8 +4525,6 @@ This server accepts configuration via the `settings` key.
 ```lua
 require'lspconfig'.sumneko_lua.setup{}
 
-  Commands:
-  
   Default Values:
     filetypes = { "lua" }
     log_level = 2
@@ -4650,8 +4544,6 @@ npm install -g svelte-language-server
 ```lua
 require'lspconfig'.svelte.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "svelteserver", "--stdio" }
     filetypes = { "svelte" }
@@ -4695,8 +4587,6 @@ This server accepts configuration via the `settings` key.
 ```lua
 require'lspconfig'.terraformls.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "terraform-ls", "serve" }
     filetypes = { "terraform" }
@@ -4759,8 +4649,6 @@ npm install -g typescript typescript-language-server
 ```lua
 require'lspconfig'.tsserver.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "typescript-language-server", "--stdio" }
     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" }
@@ -4780,8 +4668,6 @@ npm install -g vim-language-server
 ```lua
 require'lspconfig'.vimls.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "vim-language-server", "--stdio" }
     filetypes = { "vim" }
@@ -5034,8 +4920,6 @@ This server accepts configuration via the `settings` key.
 ```lua
 require'lspconfig'.vuels.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "vls" }
     filetypes = { "vue" }
@@ -5167,8 +5051,6 @@ This server accepts configuration via the `settings` key.
 ```lua
 require'lspconfig'.yamlls.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "yaml-language-server", "--stdio" }
     filetypes = { "yaml" }
@@ -5185,8 +5067,6 @@ require'lspconfig'.yamlls.setup{}
 ```lua
 require'lspconfig'.zls.setup{}
 
-  Commands:
-  
   Default Values:
     cmd = { "zls" }
     filetypes = { "zig", "zir" }
