@@ -1,9 +1,8 @@
-local configs = require 'lspconfig/configs'
 local util = require 'lspconfig/util'
 
 local name = "sumneko_lua"
 
-configs[name] = {
+return {
   default_config = {
     filetypes = {'lua'};
     root_dir = function(fname)

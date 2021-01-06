@@ -1,4 +1,3 @@
-local configs = require 'lspconfig/configs'
 local util = require 'lspconfig/util'
 
 -- https://clangd.llvm.org/extensions.html#switch-between-sourceheader
@@ -13,7 +12,7 @@ local function switch_source_header(bufnr)
 end
 
 local root_pattern = util.root_pattern("compile_commands.json", "compile_flags.txt", ".git")
-configs.clangd = {
+return {
   default_config = util.utf8_config {
     cmd = {"clangd", "--background-index"};
     filetypes = {"c", "cpp", "objc", "objcpp"};
@@ -56,5 +55,5 @@ For details on how to automatically generate one using CMake look [here](https:/
   };
 }
 
-configs.clangd.switch_source_header = switch_source_header
+-- return switch_source_header
 -- vim:et ts=2 sw=2

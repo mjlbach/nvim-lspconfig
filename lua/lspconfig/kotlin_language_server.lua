@@ -7,7 +7,6 @@
 --- 	Note that there is no LICENSE specified yet.
 
 local util = require 'lspconfig/util'
-local configs = require 'lspconfig/configs'
 
 local bin_name = "kotlin-language-server"
 if vim.fn.has('win32') == 1 then
@@ -29,7 +28,7 @@ local root_files = {
   'build.gradle.kts',      -- Gradle
 }
 
-configs.kotlin_language_server = {
+return {
   default_config = {
     filetypes = { "kotlin" };
     root_dir = util.root_pattern(unpack(root_files));

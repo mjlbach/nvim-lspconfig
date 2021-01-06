@@ -1,7 +1,6 @@
-local configs = require 'lspconfig/configs'
 local util = require 'lspconfig/util'
 
-configs.leanls = {
+return {
   default_config = {
     cmd = {"lean-language-server", "--stdio"};
     filetypes = {"lean"};

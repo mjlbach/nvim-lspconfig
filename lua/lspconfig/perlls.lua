@@ -1,7 +1,6 @@
-local configs = require 'lspconfig/configs'
 local util = require 'lspconfig/util'
 
-configs.perlls = {
+return {
   default_config = {
     cmd = {"perl",
     "-MPerl::LanguageServer",

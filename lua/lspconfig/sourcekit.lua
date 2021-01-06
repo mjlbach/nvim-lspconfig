@@ -1,7 +1,6 @@
-local configs = require 'lspconfig/configs'
 local util = require 'lspconfig/util'
 
-configs.sourcekit = {
+return {
   default_config = {
     cmd = {"xcrun", "sourcekit-lsp"};
     filetypes = {"swift", "c", "cpp", "objective-c", "objective-cpp"};

@@ -1,7 +1,6 @@
-local configs = require 'lspconfig/configs'
 local util = require 'lspconfig/util'
 
-configs.ocamllsp = {
+return {
   default_config = {
     cmd = {"ocamllsp",};
     filetypes = {'ocaml', 'reason'};

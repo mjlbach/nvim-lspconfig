@@ -1,10 +1,9 @@
-local configs = require 'lspconfig/configs'
 local util = require 'lspconfig/util'
 
 local name = "groovyls"
 local bin_name = "groovy-language-server-all.jar"
 
-configs[name] = {
+return {
   default_config = {
     cmd = {
       "java", "-jar", bin_name

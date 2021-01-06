@@ -1,4 +1,3 @@
-local configs = require 'lspconfig/configs'
 local util = require 'lspconfig/util'
 local lsp = vim.lsp
 
@@ -48,7 +47,7 @@ end
 --   end)
 -- end
 
-configs.texlab = {
+return {
   default_config = {
     cmd = {"texlab"};
     filetypes = {"tex", "bib"};
@@ -104,6 +103,6 @@ See https://texlab.netlify.com/docs/reference/configuration for configuration op
   };
 }
 
-configs.texlab.buf_build = buf_build
-configs.texlab.buf_search = buf_search
+return buf_build
+return buf_search
 -- vim:et ts=2 sw=2

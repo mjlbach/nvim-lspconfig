@@ -1,7 +1,6 @@
-local configs = require 'lspconfig/configs'
 local util = require 'lspconfig/util'
 
-configs.rome = {
+return {
   default_config = {
     cmd = {'rome', 'lsp'},
     filetypes = {

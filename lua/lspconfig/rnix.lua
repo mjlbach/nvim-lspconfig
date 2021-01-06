@@ -1,9 +1,8 @@
-local configs = require 'lspconfig/configs'
 local util = require 'lspconfig/util'
 
 local name = "rnix"
 
-configs[name] = {
+return {
 
   default_config = {
     cmd = {"rnix-lsp"};

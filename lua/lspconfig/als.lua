@@ -1,4 +1,3 @@
-local configs = require 'lspconfig/configs'
 local util = require 'lspconfig/util'
 local server_name = 'als'
 local bin_name = 'ada_language_server'

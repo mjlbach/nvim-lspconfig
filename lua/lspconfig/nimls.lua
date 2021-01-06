@@ -1,7 +1,6 @@
-local configs = require 'lspconfig/configs'
 local util = require 'lspconfig/util'
 
-configs.nimls = {
+return {
   default_config = {
     cmd = {"nimlsp",};
     filetypes = {'nim'};

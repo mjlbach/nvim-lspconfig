@@ -1,9 +1,8 @@
-local configs = require 'lspconfig/configs'
 local util = require 'lspconfig/util'
 
 local environment_directory = util.path.join(util.base_install_dir, "julials")
 
-configs.julials = {
+return {
   default_config = {
     cmd = {
         "julia", "--project=" .. environment_directory, "--startup-file=no", "--history-file=no", "-e", [[

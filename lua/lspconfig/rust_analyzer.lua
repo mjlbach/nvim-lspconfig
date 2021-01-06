@@ -1,7 +1,6 @@
-local configs = require 'lspconfig/configs'
 local util = require 'lspconfig/util'
 
-configs.rust_analyzer = {
+return {
   default_config = {
     cmd = {"rust-analyzer"};
     filetypes = {"rust"};

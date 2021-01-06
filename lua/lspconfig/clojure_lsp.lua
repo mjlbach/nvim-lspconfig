@@ -1,7 +1,6 @@
-local configs = require 'lspconfig/configs'
 local util = require 'lspconfig/util'
 
-configs.clojure_lsp = {
+return {
   default_config = {
     cmd = {"clojure-lsp"};
     filetypes = {"clojure", "edn"};

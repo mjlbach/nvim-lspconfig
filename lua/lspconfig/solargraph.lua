@@ -1,11 +1,10 @@
-local configs = require 'lspconfig/configs'
 local util = require 'lspconfig/util'
 
 local bin_name = "solargraph"
 if vim.fn.has('win32') == 1 then
   bin_name = bin_name..'.bat'
 end
-configs.solargraph = {
+return {
   default_config = {
     cmd = {bin_name, "stdio"};
     filetypes = {"ruby"};

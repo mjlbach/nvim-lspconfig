@@ -1,7 +1,6 @@
-local configs = require 'lspconfig/configs'
 local util = require 'lspconfig/util'
 
-configs.cmake = {
+return {
   default_config = {
     cmd = {"cmake-language-server"};
     filetypes = {"cmake"};

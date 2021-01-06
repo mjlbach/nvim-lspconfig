@@ -1,7 +1,6 @@
-local configs = require 'lspconfig/configs'
 local util = require 'lspconfig/util'
 
-configs.dhall_lsp_server ={
+return{
   default_config = {
     cmd = {"dhall-lsp-server"};
     filetypes = {"dhall"};

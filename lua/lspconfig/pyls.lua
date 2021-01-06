@@ -1,6 +1,5 @@
-local configs = require 'lspconfig/configs'
 
-configs.pyls = {
+return {
   default_config = {
     cmd = {"pyls"};
     filetypes = {"python"};

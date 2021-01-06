@@ -1,7 +1,6 @@
-local configs = require 'lspconfig/configs'
 local util = require 'lspconfig/util'
 
-configs.ccls = {
+return {
   default_config = {
     cmd = {"ccls"};
     filetypes = {"c", "cpp", "objc", "objcpp"};

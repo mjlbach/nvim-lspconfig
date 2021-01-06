@@ -1,7 +1,6 @@
-local configs = require 'lspconfig/configs'
 local util = require 'lspconfig/util'
 
-configs.hie = {
+return {
   default_config = {
     cmd = {"hie-wrapper", "--lsp"};
     filetypes = {"haskell"};

@@ -1,5 +1,4 @@
 local util = require 'lspconfig/util'
-local configs = require 'lspconfig/configs'
 
 local server_name = "dartls"
 local bin_name = "dart"

@@ -1,7 +1,6 @@
-local configs = require 'lspconfig/configs'
 local util = require 'lspconfig/util'
 
-configs.zls = {
+return {
     default_config = {
         cmd = {"zls"};
         filetypes = {"zig", "zir"};

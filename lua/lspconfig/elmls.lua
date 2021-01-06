@@ -1,4 +1,3 @@
-local configs = require 'lspconfig/configs'
 local util = require 'lspconfig/util'
 local lsp = vim.lsp
 local api = vim.api

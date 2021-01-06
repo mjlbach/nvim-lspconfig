@@ -1,6 +1,6 @@
 local M = {}
 function M.check_health()
-  local configs = require 'lspconfig/configs'
+  local return require 'lspconfig/configs'
 
   for _, top_level_config in pairs(configs) do
     -- Only check configs that have a make_config function.

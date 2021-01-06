@@ -1,7 +1,6 @@
-local configs = require 'lspconfig/configs'
 local util = require 'lspconfig/util'
 
-configs.terraformls = {
+return {
   default_config = {
     cmd = {"terraform-ls", "serve"};
     filetypes = {"terraform"};

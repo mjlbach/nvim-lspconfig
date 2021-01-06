@@ -1,7 +1,6 @@
-local configs = require 'lspconfig/configs'
 local util = require 'lspconfig/util'
 
-configs.ghcide = {
+return {
   default_config = {
     cmd = { "ghcide", "--lsp" };
     filetypes = { "haskell", "lhaskell" };

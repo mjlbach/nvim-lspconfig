@@ -3,10 +3,10 @@ local util = require 'lspconfig/util'
 local api, validate, lsp = vim.api, vim.validate, vim.lsp
 local tbl_extend = vim.tbl_extend
 
-local configs = {}
 local i = 0
 local total_time = 0
 
+local configs = {} 
 function configs.__newindex(t, config_name, config_def)
   -- validate {
   --   name = {config_name, 's'};

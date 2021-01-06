@@ -1,7 +1,6 @@
-local configs = require 'lspconfig/configs'
 local util = require 'lspconfig/util'
 
-configs.gdscript = {
+return {
   default_config = {
     cmd = {"nc", "localhost", "6008"};
     filetypes = {"gd", "gdscript", "gdscript3"};
