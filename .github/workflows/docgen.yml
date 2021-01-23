@@ -1,11 +1,13 @@
 name: docgen
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   docgen:
     runs-on: [ubuntu-latest]
-    if: github.ref != 'master'
     steps:
     - uses: actions/checkout@v2
     - run: date +%F > todays-date
