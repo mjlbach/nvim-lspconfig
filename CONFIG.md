@@ -2836,7 +2836,7 @@ require'lspconfig'.jdtls.setup{}
   Default Values:
     cmd = { "/usr/lib/jvm/adoptopenjdk-11-hotspot-amd64/bin/java", "-Declipse.application=org.eclipse.jdt.ls.core.id1", "-Dosgi.bundles.defaultStartLevel=4", "-Declipse.product=org.eclipse.jdt.ls.core.product", "-Dlog.protocol=true", "-Dlog.level=ALL", "-Xms1g", "-Xmx2G", "-jar", "vim.NIL", "-configuration", "vim.NIL", "-data", "vim.NIL", "--add-modules=ALL-SYSTEM", "--add-opens java.base/java.util=ALL-UNNAMED", "--add-opens java.base/java.lang=ALL-UNNAMED" }
     cmd_env = {
-      GRADLE_HOME = "/usr/share/gradle-7.1.1",
+      GRADLE_HOME = "/usr/share/gradle-7.1",
       JAR = vim.NIL
     }
     filetypes = { "java" }
@@ -3746,7 +3746,7 @@ require'lspconfig'.ocamllsp.setup{}
   
   Default Values:
     cmd = { "ocamllsp" }
-    filetypes = { "ocaml", "ocamllex", "menhir", "reason", "ocamlinterface" }
+    filetypes = { "ocamllex", "menhir", "reason", "ocamlinterface", "ocaml" }
     get_language_id = function(_, ftype)
       return language_id_of[ftype]
     end
